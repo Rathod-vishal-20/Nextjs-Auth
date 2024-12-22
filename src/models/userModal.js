@@ -5,7 +5,7 @@ import mongoose  from "mongoose";
 const userSchema = new mongoose.Schema({
     username:{
         type:String,
-        requiired:[true, "Please provide a username"],
+        required:[true, "Please provide a username"],
         unique:true
 
     },
@@ -16,7 +16,7 @@ const userSchema = new mongoose.Schema({
     },
     password:{
         type:String,
-        requiired:[true, "Please provide password"]
+        required:[true, "Please provide password"]
     },
     isVerified:{
         type:Boolean,
@@ -32,6 +32,6 @@ const userSchema = new mongoose.Schema({
     verifyTokenExpiry:Date
 }) 
 
-const User = mongoose.model.users ||  mongoose.model("users", userSchema)
+const User = mongoose.models.users ||  mongoose.model("users", userSchema)
 
 export default User
